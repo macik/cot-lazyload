@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>LazyLoad от macik'a</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>LazyLoad</h1>
+          <h2>Расширение к CMF Cotonti для «отложенной» загрузки</h2>
+	  <div class="right">
+	<a href="index.html"><img src="images/en.png">&nbsp;English</a> |
+	<a href="index_ru.html"><img src="images/ru.png">&nbsp;Русский</a>
+	</div>
+        </header>
+
+  <section id="downloads" class="clearfix">
+          <a href="https://github.com/macik/cot-lazyload/zipball/master" id="download-zip" class="button"><span>Скачать .zip</span></a>
+          <a href="https://github.com/macik/cot-lazyload/tarball/master" id="download-tar-gz" class="button"><span>Скачать .tar.gz</span></a>
+          <a href="https://github.com/macik/cot-lazyload" id="view-on-github" class="button"><span>Посмотреть на GitHub</span></a>
+        </section>
+
+        <hr>
+<section id="main_content">
+
+<article itemprop="mainContentOfPage" class="markdown-body entry-content"><h1>
+<a href="#lazyload" class="anchor" name="lazyload"><span class="mini-icon mini-icon-link"></span></a>LazyLoad</h1>
+
+<p>Расширение для Cotonti CMF. Реализует функцию «отложенной» загрузки изображений.</p>
+
+<h2>
+<a href="#description" class="anchor" name="description"><span class="mini-icon mini-icon-link"></span></a>Описание</h2>
+
+<p>Включает на страницах сайта функцию «отложенной» загрузки изображений. 
+Это позволяет страницам загружаться быстрее, особенно тем на которых расположено много иллюстраций.
+При установленном расширении иллюстрации на странице загружаются постепенно, по мере их появления на экране.
+Те изображения, которые находятся за пределами экрана ожидают загрузки, и будут загружены только когда
+пользователь пролистает страницу до того места где вставлена иллюстрация.
+</p>
+
+<h2>
+<a href="#features" class="anchor" name="features"><span class="mini-icon mini-icon-link"></span></a>Особенности</h2>
+
+<ul>
+<li>Откладывает загрузку изображения которые находятся за пределами экрана</li>
+<li>Страницы со множеством изображений загружаются быстрее</li>
+<li>Возможность выбрать одну из двух библиотек</li>
+<li>Можно указать какие имеено изображения будут обработаны для «отложенной» загрузки</li>
+<li>Изображения будут отображаться даже при выключенном JS</li>
+<li>В плагин включена демонстрационная страница</li>
+</ul><h2>
+<a href="#demo-page" class="anchor" name="demo-page"><span class="mini-icon mini-icon-link"></span></a>Демонстрационная страница</h2>
+
+<p>Демонстрационная страница включена в архив Расширения. Просто установите расширение и перейдите
+на страницу плагина (<a href="http://www.yoursite.com/lazyload/">http://www.yoursite.com/lazyload/</a>).
+Посмотреть демонстрацию без установки можно <a href="demo.html">здесь</a>.
+</p>
+
+<h3>
+<a href="#comments" class="anchor" name="comments"><span class="mini-icon mini-icon-link"></span></a>Комментарии</h3>
+
+<p>Плагин работает сразу после установки. 
+Дополнительные настройки можно посмотреть на соответствующей странице.
+Для лучшего отображения (чтобы блоки содержимого страницы не «прыгали» по мере загрузки изображений)
+рекомендуется жестко указывать атрибуты ширины и высоты (<code>height</code> и <code>width</code>)
+для ваших изоюражений. В таком случае под изображение сразу будет зарезервирован блок
+необходимого размера и при отложенной загрузке блоки текта не будут смещаться.
+</p>
+
+<h3>
+<a href="#how-extension-works" class="anchor" name="how-extension-works"><span class="mini-icon mini-icon-link"></span></a>Как оно работает</h3>
+
+<p>Расширение обрабатывает исходный текст страницы и ищет теги
+<code>img</code>, затем проверяет атрибут <code>src</code> и меняет его на шаблонный
+с изображением заглушкой. После загрузки страницы JS скрипт
+обрабатывает теги <code>img</code> и проверяет видны ли они в данный момент на экране.
+Если видны происходит обычная загрузка, если нет, скрипт ждет пока пользователь пролистает
+страницу до нужного места и затем произведет загрузку.</p>
+
+<h2>
+<a href="#install" class="anchor" name="install"><span class="mini-icon mini-icon-link"></span></a>Установка</h2>
+
+<ul>
+<li>Распаковать архив, скопировать файлы в корневую папку сайта (при этом файлы из папки plugins должны попасть соответственно в папку plugins сайта).</li>
+<li>Установить через панель Администрирования → Расширения (<code>Управление сайтом → Расширения</code>)</li>
+<li>Проверьте настройки в меню управления плагином (<code>Управление сайтом → Расширения → LazyLoad → Конфигурация</code>).</li>
+</ul><h3>
+<a href="#comments-1" class="anchor" name="comments-1"><span class="mini-icon mini-icon-link"></span></a>Комментарии</h3>
+
+<p>Проверить плагин в действии на вашем сайте вы можете открыв страницу плагина «LazyLoad». 
+На ней будет отражен список изображений с «отложенной» загрузкой.
+</p>
+
+<h2>
+<a href="#references" class="anchor" name="references"><span class="mini-icon mini-icon-link"></span></a>Ссылки</h2>
+
+<ul>
+<li>
+<a href="http://Cotonti.com/">Cotonti.com</a> -- Сайт Cotonti CMF</li>
+</ul></article>
+  </section>
+        <footer>
+          Cot-lazyload is maintained by <a href="https://github.com/macik">macik</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
