@@ -14,6 +14,7 @@ $L['info_desc'] ='LazyLoad delays loading of images in long web pages for faster
 
 $L['cfg_used_lib'] = array('Used lib for «lazyload»','type of library for lazyload effect');
 $L['cfg_add_noscript'] = array('Add «noscript» tag','for users with JavaScript switched off');
+$L['cfg_lazy_class'] = array('Process only images with class','leave blank to process all images on page');
 $L['cfg_def_width'] = array('Default width','for images with no width specified');
 $L['cfg_def_height'] = array('Default height','for images with no height specified');
 

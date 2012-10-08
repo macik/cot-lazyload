@@ -1,5 +1,5 @@
 function make_lazyload(){
-	$( 'img[data-original]' ).show().lazyload({
+	$( 'img[data-original]'+lazy_class ).show().lazyload({
 		effect: "fadeIn",
 		threshold : 200
 	});

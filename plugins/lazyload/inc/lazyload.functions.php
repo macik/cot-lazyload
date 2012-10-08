@@ -27,23 +27,24 @@ function img_lazyload($match){
 		list($att,$val) = get_attributes($match[0]);
 		$att = array_map('strtolower', $att);
 		$attrs = array_combine($att, $val);
-		if ($attrs['src'][0]) {
-			$src_tag = 'data-original'; // data-lazy-src
-			$attrs[$src_tag][0] = $attrs['src'][0];
-			$attrs['src'][0] = $cfg['plugins_dir'].'/lazyload/img/gray.gif';
-		}
-		if ($ll_cfg['def_height'] && empty($attrs['height'][0])) {
-			$attrs['height'][0] = $ll_cfg['def_height'];
-		}
-		if ($ll_cfg['def_width'] && empty($attrs['width'][0])) {
-			$attrs['width'][0] = $ll_cfg['def_width'];
-		}
+		if (!$ll_cfg['lazy_class'] || in_array($ll_cfg['lazy_class'],explode(' ',$attrs['class'][0]))) {
+			if ($attrs['src'][0]) {
+				$src_tag = 'data-original'; // data-lazy-src
+				$attrs[$src_tag][0] = $attrs['src'][0];
+				$attrs['src'][0] = $cfg['plugins_dir'].'/lazyload/img/gray.gif';
+			}
+			if ($ll_cfg['def_height'] && empty($attrs['height'][0])) {
+				$attrs['height'][0] = $ll_cfg['def_height'];
+			}
+			if ($ll_cfg['def_width'] && empty($attrs['width'][0])) {
+				$attrs['width'][0] = $ll_cfg['def_width'];
+			}
 
-		if ($ll_cfg['add_noscript']) {
-			$attrs['class'][0] .= ($attrs['class'][0]?' ':'').'lazy';
-			$addon = '<noscript>'.$match[1].$match[2].'></noscript>';
+			if ($ll_cfg['add_noscript']) {
+				$attrs['class'][0] .= ($attrs['class'][0]?' ':'').'lazy';
+				$addon = '<noscript>'.$match[1].$match[2].'></noscript>';
+			}
 		}
-
 		$attr_str = '';
 		foreach ($attrs as $attr => $value) {
 			$q = $value[1] ? $value[1] : '"';

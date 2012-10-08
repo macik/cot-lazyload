@@ -18,8 +18,9 @@ Lock_members=2345
 [BEGIN_COT_EXT_CONFIG]
 used_lib=05:select:lazyload,sonar:lazyload:Used «lazyload» lib
 add_noscript=10:radio:0,1:1:Add «noscript» tag
-def_width=11:string:::Default width if not specified
-def_height=12:string:::Default height if not specified
+lazy_class=11:string:::Process only images with class
+def_width=15:string:::Default width if not specified
+def_height=16:string:::Default height if not specified
 [END_COT_EXT_CONFIG]
 ==================== */
 
