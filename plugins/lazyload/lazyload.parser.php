@@ -18,6 +18,6 @@ Order=50
 
 defined('COT_CODE') or die('Wrong URL');
 
-if (defined('LAZYLOAD')) $text = lazyload_parse($text);
+if (defined('LAZYLOAD')) $text = lazyload_parse($text,$ll_cfg['add_no_script']);
 
 ?>

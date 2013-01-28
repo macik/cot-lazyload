@@ -18,7 +18,7 @@ Features
 * Pages containing many images loads faster
 * Two different library for your choice
 * Control what images to make «lazy»
-* Works in browsers with JS switched off
+* Works in browsers with JS switched off (just like «Lazy» switched off)
 * Sample page included
 
 Demo page
@@ -58,5 +58,7 @@ References
 ----------
 
 * [Cotonti.com](http://Cotonti.com/) -- Home of Cotonti CMF
+* [LazyLoad on GitHub](http://macik.github.com/cot-lazyload/) -- LazyLoad Page
+* [Demo of LazyLoad](http://macik.github.com/cot-lazyload/demo.html) -- LazyLoad demopage
 
 

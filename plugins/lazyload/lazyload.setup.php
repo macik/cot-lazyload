@@ -4,8 +4,8 @@
 Code=lazyload
 Name=LazyLoad
 Description=LazyLoad delays loading of images in long web pages for faster page loading
-Version=1.0
-Date=2012-Oct-07
+Version=1.1
+Date=2012-Nov-16
 Author=Andrey Matsovkin
 Copyright=Copyright (c) 2011-2012, Andrey Matsovkin
 Notes=If your enjoy my plugin please consider donating to help support future developments. Thanks! mailto:macik.spb@gmail.com
@@ -28,7 +28,6 @@ def_height=16:string:::Default height if not specified
  * LazyLoad plugin for Cotonti CMF
  *
  * @package lazyload
- * @version 1.0
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2011-2012
  * @license Distributed under BSD license.

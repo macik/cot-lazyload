@@ -16,9 +16,9 @@ Hooks=rc
 
 if (!defined('COT_CODE') && !defined('COT_PLUG')) { die('Wrong URL ('.array_pop(explode("\\",__FILE__)).').'); }
 
-if ($cfg['jquery']
-	&& ($_GET['e']=='lazyload' || $_GET['e'] == 'page'
-			|| (empty($_GET['e']) && empty($_GET['r']) && empty($_GET['o'])))
+if ($cfg['jquery'] && !defined('COT_ADMIN')
+	&& ($_GET['e']=='lazyload' || $_GET['e'] == 'page' // on pages or plug samplepage
+			|| (empty($_GET['e']) && empty($_GET['r']) && empty($_GET['o']))) // on index page
 	) {
     define('LAZYLOAD',true);
     require_once cot_incfile('lazyload', 'plug');
